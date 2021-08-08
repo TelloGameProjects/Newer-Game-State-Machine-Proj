@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="MainMenuSelector.uss" />
     <ui:VisualElement name="screen" style="flex-grow: 1; align-items: center; justify-content: center;">
-        <ui:Button text="Start" display-tooltip-when-elided="true" name="start-button" />
+        <ui:Button text="Start" display-tooltip-when-elided="true" name="start-button" style="position: absolute; top: 70%;" />
         <ui:VisualElement name="label-container" style="position: absolute; top: 15%; align-items: center; justify-content: center;">
-            <ui:Label text="Neon Cloud" display-tooltip-when-elided="true" name="title-label" style="font-size: 43px;" />
+            <ui:Label text="Neon Cloud" display-tooltip-when-elided="true" name="title-label" class="logo-label" style="font-size: 76px; -unity-font-style: bold; -unity-font: url(&apos;/Assets/UI Toolkit/Resources/Fonts &amp; Materials/LiberationSans.ttf&apos;);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
