@@ -8,7 +8,7 @@ public class MainMenuInitializer : MonoBehaviour
     // ScriptableObject containing a Vast.StateMachine.StateMachine()
     [SerializeField] private AppManager managingParent;
 
-    [SerializeField] private MainMenuState menuState;
+    [SerializeField] private MainMenuStateAsset menuState;
 
     
 

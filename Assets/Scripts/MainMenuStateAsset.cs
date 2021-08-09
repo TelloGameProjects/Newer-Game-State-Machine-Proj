@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MainMenuState", menuName = "States/MainMenuState")]
-public class MainMenuState : ScriptableObject
+public class MainMenuStateAsset : ScriptableObject
 {
     private SplashScreenState stateObject;
 
-    MainMenuState()
+    MainMenuStateAsset()
     {
-        stateObject = new SplashScreenState();
-        Debug.Log("Hello from MainMenuState()");
+        StateObject = new SplashScreenState();
+        Debug.Log("Hello from MainMenuStateAsset()");
     }
 
     public SplashScreenState StateObject { get => stateObject; set => stateObject = value; }

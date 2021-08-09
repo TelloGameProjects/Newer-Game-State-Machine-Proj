@@ -5,16 +5,16 @@ using Vast.StateMachine;
 
 public class PlayInitializer : MonoBehaviour
 {
-    [SerializeField] private AppManager managingParent;
+    [SerializeField] private AppManager stateMachine;
 
-    private PlayingState playingState;
+    [SerializeField] private PlayingStateAsset playingState;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        playingState = (PlayingState)(managingParent.AppStateMachine.AddState(new PlayingState()));
-        managingParent.AppStateMachine.OnStateChange += CheckChangedState;
+        stateMachine.AppStateMachine.AddState(playingState.StateObject);
+        stateMachine.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class PlayInitializer : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in Playing State
-        if (newState == playingState)
+        if (newState == playingState.StateObject)
         {
             Debug.Log("Hello from PlayInitializer.CheckChangedState()!");
         }
