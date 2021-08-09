@@ -232,6 +232,10 @@ MonoBehaviour:
   playingManager: {fileID: 211116117}
   pauseManager: {fileID: 2141018347}
   gameOverManager: {fileID: 449643027}
+  mainMenuState: {fileID: 11400000, guid: 72f1ee9dd3cb6ea4087b1426624894ad, type: 2}
+  playingState: {fileID: 11400000, guid: 57d2fdb772b646c43b27af1cfdc9de46, type: 2}
+  pauseState: {fileID: 11400000, guid: db5e32a5e8d689b498aa84baa0915237, type: 2}
+  gameOverState: {fileID: 11400000, guid: 09112735becca024d9f5094ea8012644, type: 2}
 --- !u!4 &471633796
 Transform:
   m_ObjectHideFlags: 0

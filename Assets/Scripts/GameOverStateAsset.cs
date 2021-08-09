@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverStateAsset : MonoBehaviour
+[CreateAssetMenu(fileName = "GameOverState", menuName = "States/GameOverState")]
+public class GameOverStateAsset : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameOverState stateObject;
+
+    GameOverStateAsset()
     {
-        
+        StateObject = new GameOverState();
+        Debug.Log("Hello from GameOverStateAsset()");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameOverState StateObject { get => stateObject; set => stateObject = value; }
 }

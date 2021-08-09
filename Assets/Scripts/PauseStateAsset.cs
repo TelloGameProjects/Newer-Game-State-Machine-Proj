@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseStateAsset : MonoBehaviour
+[CreateAssetMenu(fileName = "PauseState", menuName = "States/PauseState")]
+public class PauseStateAsset : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    private PauseState stateObject;
+
+    PauseStateAsset()
     {
-        
+        StateObject = new PauseState();
+        Debug.Log("Hello from PauseStateAsset()");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public PauseState StateObject { get => stateObject; set => stateObject = value; }
 }

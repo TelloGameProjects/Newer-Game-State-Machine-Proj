@@ -10,13 +10,17 @@ public class MainMenuInitializer : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
-    
+    private void OnEnable()
+    {
+        managingParent.AppStateMachine.AddState(menuState.StateObject);
+        managingParent.AppStateMachine.OnStateChange += CheckChangedState;
+        Debug.Log("MainMenuState added to AppStateMachine");
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        managingParent.AppStateMachine.AddState(menuState.StateObject);
-        managingParent.AppStateMachine.OnStateChange += CheckChangedState;
+        
     }
 
     // Update is called once per frame
