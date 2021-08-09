@@ -22,5 +22,6 @@ public class UIHandler : MonoBehaviour
     private void Button_clicked()
     {
         Debug.Log("Start Button Clicked");
+        gameObject.SetActive(false);
     }
 }
