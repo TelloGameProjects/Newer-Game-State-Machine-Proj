@@ -8,15 +8,14 @@ public class MainMenuInitializer : MonoBehaviour
     // ScriptableObject containing a Vast.StateMachine.StateMachine()
     [SerializeField] private AppManager managingParent;
 
-    // Create the state object here, then give to AppManager
-    private SplashScreenState splashScreenState;
-    private bool isActive;
+    [SerializeField] private MainMenuState menuState;
+
     
 
     // Start is called before the first frame update
     void Start()
     {
-        splashScreenState = (SplashScreenState)(managingParent.AppStateMachine.AddState(new SplashScreenState()));
+        managingParent.AppStateMachine.AddState(menuState.MenuState);
         managingParent.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
@@ -30,7 +29,7 @@ public class MainMenuInitializer : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in MainMenu
-        if(newState == splashScreenState)
+        if(newState == menuState.MenuState)
         {
             Debug.Log("Hello from MainMenuInitializer.CheckChangedState()!");
             //TODO activate relevant GameObject(s)
