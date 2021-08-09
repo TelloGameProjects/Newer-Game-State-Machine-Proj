@@ -15,7 +15,7 @@ public class MainMenuInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        managingParent.AppStateMachine.AddState(menuState.MenuState);
+        managingParent.AppStateMachine.AddState(menuState.StateObject);
         managingParent.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
@@ -29,10 +29,17 @@ public class MainMenuInitializer : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in MainMenu
-        if(newState == menuState.MenuState)
+        if(newState == menuState.StateObject)
         {
             Debug.Log("Hello from MainMenuInitializer.CheckChangedState()!");
             //TODO activate relevant GameObject(s)
+            ActivateStateObjects();
         }
+    }
+
+    void ActivateStateObjects()
+    {
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(true);
     }
 }
