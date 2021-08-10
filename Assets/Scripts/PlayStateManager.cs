@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vast.StateMachine;
 
-public class PlayInitializer : MonoBehaviour
+public class PlayStateManager : MonoBehaviour
 {
-    [SerializeField] private AppManager stateMachine;
+    [SerializeField] private StateManager stateManager;
 
     [SerializeField] private PlayingStateAsset playingState;
 
@@ -13,8 +13,8 @@ public class PlayInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stateMachine.AppStateMachine.AddState(playingState.StateObject);
-        stateMachine.AppStateMachine.OnStateChange += CheckChangedState;
+        stateManager.StateMachine.AppStateMachine.AddState(playingState.StateObject);
+        stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
     // Update is called once per frame
