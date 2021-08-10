@@ -7,6 +7,8 @@ using Vast.StateMachine;
 
 public class MainMenuInitializer : MonoBehaviour
 {
+
+    [SerializeField] private SceneInitializer sceneInit;
     // ScriptableObject containing a Vast.StateMachine.StateMachine()
     [SerializeField] private AppManager managingParent;
 

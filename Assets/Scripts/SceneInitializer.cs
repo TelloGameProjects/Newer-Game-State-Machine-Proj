@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneInitializer : MonoBehaviour
+public class SceneInitializer : MonoSingleton<SceneInitializer>
 {
     [SerializeField] private AppManager stateMachine;
 
