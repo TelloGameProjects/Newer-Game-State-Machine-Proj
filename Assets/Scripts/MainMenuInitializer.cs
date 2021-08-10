@@ -12,7 +12,6 @@ public class MainMenuInitializer : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
-    [SerializeField] UnityEvent callbackEvent;
     private void OnEnable()
     {
         stateManager.StateMachine.AppStateMachine.AddState(menuState.StateObject);
