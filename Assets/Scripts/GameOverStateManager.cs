@@ -8,13 +8,15 @@ public class GameOverStateManager : MonoBehaviour
     [SerializeField] private GameStateManager stateManager;
     [SerializeField] private GameOverStateAsset gameOverStateAsset;
 
+    public GameOverStateAsset GameOverStateAsset { get => gameOverStateAsset; set => gameOverStateAsset = value; }
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        stateManager.StateMachine.AppStateMachine.AddState(gameOverStateAsset.StateObject);
+        stateManager.StateMachine.AppStateMachine.AddState(GameOverStateAsset.StateObject);
         stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
@@ -28,7 +30,7 @@ public class GameOverStateManager : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in Playing State
-        if (newState == gameOverStateAsset.StateObject)
+        if (newState == GameOverStateAsset.StateObject)
         {
             Debug.Log("Hello from PlayInitializer.CheckChangedState()!");
         }

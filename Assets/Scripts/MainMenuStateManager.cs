@@ -12,9 +12,11 @@ public class MainMenuStateManager : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
+    public MainMenuStateAsset MenuState { get => menuState; set => menuState = value; }
+
     private void OnEnable()
     {
-        stateManager.StateMachine.AppStateMachine.AddState(menuState.StateObject);
+        stateManager.StateMachine.AppStateMachine.AddState(MenuState.StateObject);
         stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
         Debug.Log("MainMenuState added to AppStateMachine");
     }
@@ -35,7 +37,7 @@ public class MainMenuStateManager : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in MainMenu
-        if(newState == menuState.StateObject)
+        if(newState == MenuState.StateObject)
         {
             Debug.Log("Hello from MainMenuInitializer.CheckChangedState()!");
             //TODO activate relevant GameObject(s)

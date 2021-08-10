@@ -7,13 +7,15 @@ public class PlayStateManager : MonoBehaviour
 {
     [SerializeField] private GameStateManager stateManager;
 
-    [SerializeField] private PlayingStateAsset playingState;
+    [SerializeField] private PlayingStateAsset playingStateAsset;
+
+    public PlayingStateAsset PlayingStateAsset { get => playingStateAsset; set => playingStateAsset = value; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        stateManager.StateMachine.AppStateMachine.AddState(playingState.StateObject);
+        stateManager.StateMachine.AppStateMachine.AddState(PlayingStateAsset.StateObject);
         stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
@@ -27,7 +29,7 @@ public class PlayStateManager : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in Playing State
-        if (newState == playingState.StateObject)
+        if (newState == PlayingStateAsset.StateObject)
         {
             Debug.Log("Hello from PlayInitializer.CheckChangedState()!");
         }

@@ -8,13 +8,15 @@ public class PauseStateManager : MonoBehaviour
     [SerializeField] private GameStateManager stateManager;
     [SerializeField] private PauseStateAsset pauseStateAsset;
 
-    
+    public PauseStateAsset PauseStateAsset { get => pauseStateAsset; set => pauseStateAsset = value; }
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-       stateManager.StateMachine.AppStateMachine.AddState(pauseStateAsset.StateObject);
+       stateManager.StateMachine.AppStateMachine.AddState(PauseStateAsset.StateObject);
        stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
     }
 
@@ -28,7 +30,7 @@ public class PauseStateManager : MonoBehaviour
     {
 
         // TODO check if newState is relevant to us in Playing State
-        if (newState == pauseStateAsset.StateObject)
+        if (newState == PauseStateAsset.StateObject)
         {
             Debug.Log("Hello from PlayInitializer.CheckChangedState()!");
         }
