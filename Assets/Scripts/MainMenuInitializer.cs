@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Vast.StateMachine;
 
 public class MainMenuInitializer : MonoBehaviour
@@ -10,6 +12,7 @@ public class MainMenuInitializer : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
+    [SerializeField] UnityEvent callbackEvent;
     private void OnEnable()
     {
         managingParent.AppStateMachine.AddState(menuState.StateObject);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneInitializer : MonoBehaviour
 {
     [SerializeField] private AppManager stateMachine;
+
     [SerializeField] private GameObject mainMenuManager;
     [SerializeField] private GameObject playingManager;
     [SerializeField] private GameObject pauseManager;
