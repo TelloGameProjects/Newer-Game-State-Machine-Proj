@@ -16,6 +16,7 @@ public class StateManager : MonoSingleton<StateManager>
     [SerializeField] private PauseStateAsset pauseState;
     [SerializeField] private GameOverStateAsset gameOverState;
 
+    public AppManager StateMachine { get => stateMachine; set => stateMachine = value; }
 
     private void Awake()
     {
@@ -35,10 +36,10 @@ public class StateManager : MonoSingleton<StateManager>
         {
             Debug.Log(mainMenuState.StateObject);
                 
-            if(stateMachine.AppStateMachine.ContainsState(mainMenuState.StateObject))
+            if(StateMachine.AppStateMachine.ContainsState(mainMenuState.StateObject))
             {
                 Debug.Log("stateMachine DOES contain mainMenuState.StateObject");
-                stateMachine.AppStateMachine.ChangeState(mainMenuState.StateObject);
+                StateMachine.AppStateMachine.ChangeState(mainMenuState.StateObject);
             }
             else
             {

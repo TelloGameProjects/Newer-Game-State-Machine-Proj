@@ -9,16 +9,14 @@ public class MainMenuInitializer : MonoBehaviour
 {
 
     [SerializeField] private StateManager stateManager;
-    // ScriptableObject containing a Vast.StateMachine.StateMachine()
-    [SerializeField] private AppManager managingParent;
 
     [SerializeField] private MainMenuStateAsset menuState;
 
     [SerializeField] UnityEvent callbackEvent;
     private void OnEnable()
     {
-        managingParent.AppStateMachine.AddState(menuState.StateObject);
-        managingParent.AppStateMachine.OnStateChange += CheckChangedState;
+        stateManager.StateMachine.AppStateMachine.AddState(menuState.StateObject);
+        stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
         Debug.Log("MainMenuState added to AppStateMachine");
     }
 
