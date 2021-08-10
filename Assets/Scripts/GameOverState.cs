@@ -10,7 +10,7 @@ public class GameOverState : State
         Name = "GameOverState";
     }
     #region Class Methods
-    public override void OnEnter() { Debug.Log("GameOverState.Awake()"); }
+    public override void OnEnter() {}
     public override void OnExit() { }
     public override void Update() { }
     public override void FixedUpdate() { }

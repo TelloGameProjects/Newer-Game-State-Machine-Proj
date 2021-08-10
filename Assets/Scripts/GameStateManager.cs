@@ -16,15 +16,19 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     [SerializeField] private PauseStateAsset pauseState;
     [SerializeField] private GameOverStateAsset gameOverState;
 
+    [SerializeField] private StartButton mainMenuStartButton;
+
     public AppManager StateMachine { get => stateMachine; set => stateMachine = value; }
+    public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
     private void Awake()
     {
-        Debug.Log("SceneInitializer.Awake() called");
+        //Debug.Log("SceneInitializer.Awake() called");
         if (mainMenuManager.tag == "MainMenuManager")
         {
             mainMenuManager.SetActive(true);
-            Debug.Log("mainMenuManager.SetActive(true);");
+            
+           // Debug.Log("mainMenuManager.SetActive(true);");
         }
     }
 
@@ -32,14 +36,17 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     // Start is called before the first frame update
     void Start()
     {
-        if(mainMenuState.StateObject != null)
+
+
+        if (mainMenuState.StateObject != null)
         {
-            Debug.Log(mainMenuState.StateObject);
+            
                 
             if(StateMachine.AppStateMachine.ContainsState(mainMenuState.StateObject))
             {
-                Debug.Log("stateMachine DOES contain mainMenuState.StateObject");
+                //Debug.Log("stateMachine DOES contain mainMenuState.StateObject");
                 StateMachine.AppStateMachine.ChangeState(mainMenuState.StateObject);
+                MainMenuStartButton.StartButtonControl.clickable.clicked += TransitionToPlayState;
             }
             else
             {
@@ -52,5 +59,22 @@ public class GameStateManager : MonoSingleton<GameStateManager>
     void Update()
     {
         
+    }
+
+    void TransitionToPlayState()
+    {
+        playingManager.SetActive(true);
+        if (StateMachine.AppStateMachine.ContainsState(playingState.StateObject))
+        {
+            //Debug.Log("StateMachine DOES contain playing state... transitioning now.");
+            StateMachine.AppStateMachine.ChangeState(playingState.StateObject);
+            mainMenuManager.SetActive(false);
+        }
+        else
+        {
+            //Debug.Log("StateMachine DOES NOT contain playing state... not transitioning now.");
+            playingManager.SetActive(false);
+        }
+     
     }
 }

@@ -10,7 +10,7 @@ public class PauseStateAsset : ScriptableObject
     PauseStateAsset()
     {
         StateObject = new PauseState();
-        Debug.Log("Hello from PauseStateAsset()");
+        //Debug.Log("Hello from PauseStateAsset()");
     }
 
     public PauseState StateObject { get => stateObject; set => stateObject = value; }

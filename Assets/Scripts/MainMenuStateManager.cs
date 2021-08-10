@@ -12,13 +12,24 @@ public class MainMenuStateManager : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
+    [SerializeField] private StartButton mainMenuStartButton;
+
+
     public MainMenuStateAsset MenuState { get => menuState; set => menuState = value; }
+    public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
     private void OnEnable()
     {
         stateManager.StateMachine.AppStateMachine.AddState(MenuState.StateObject);
         stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
-        Debug.Log("MainMenuState added to AppStateMachine");
+        //Debug.Log("MainMenuState added to AppStateMachine");
+        
+
+    }
+
+    private void Start()
+    {
+        MainMenuStartButton.StartButtonControl.clickable.clicked += ButtonWorks;
     }
 
     void CheckChangedState(State newState)
@@ -27,7 +38,7 @@ public class MainMenuStateManager : MonoBehaviour
         // TODO check if newState is relevant to us in MainMenu
         if(newState == MenuState.StateObject)
         {
-            Debug.Log("Hello from MainMenuInitializer.CheckChangedState()!");
+            //Debug.Log("Hello from MainMenuInitializer.CheckChangedState()!");
             //TODO activate relevant GameObject(s)
             ActivateStateObjects();
         }
@@ -37,5 +48,10 @@ public class MainMenuStateManager : MonoBehaviour
     {
         foreach (Transform child in transform)
             child.gameObject.SetActive(true);
+    }
+
+    void ButtonWorks()
+    {
+        //Debug.Log("Hello from MainMenuStateManager, the start button is working!!!");
     }
 }

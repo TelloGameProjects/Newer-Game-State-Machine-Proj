@@ -1,29 +1,29 @@
-﻿using System;
-using UnityEngine;
-using Unity​Engine.UIElements;
-
+﻿using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UIHandler : MonoBehaviour
 {
     // provide reference in editor inspector (from step 2)
     public UIDocument UIDocument;
-    Button menuButton;
-    Action onMenuButtonClick;
+    
+    [SerializeField]
+    private StartButton mainMenuStartButton;
 
-    public Action OnButtonClick { get => onMenuButtonClick; set => onMenuButtonClick = value; }
+    public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
-    void Start()
+    void Awake()
     {
         var root = UIDocument.rootVisualElement;
         // get ui elements by name
-        menuButton = root.Q<Button>("start-button");
+        MainMenuStartButton.StartButtonControl = root.Q<Button>("start-button");
 
-        // add event handler
-        menuButton.clickable.clicked += ButtonClicked;
+        // add event handler for this class
+        MainMenuStartButton.StartButtonControl.clickable.clicked += Button_clicked;
+
     }
 
-    private void ButtonClicked()
+    private void Button_clicked()
     {
-        OnButtonClick?.Invoke();
+        Debug.Log("UIHandler: Start Button Clicked");
     }
 }

@@ -11,7 +11,7 @@ public class PlayingStateAsset : ScriptableObject
     PlayingStateAsset()
     {
         StateObject = new PlayingState();
-        Debug.Log("Hello from PlayingStateAsset()");
+       // Debug.Log("Hello from PlayingStateAsset()");
     }
 
     public PlayingState StateObject { get => stateObject; set => stateObject = value; }

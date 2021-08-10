@@ -10,7 +10,7 @@ public class GameOverStateAsset : ScriptableObject
     GameOverStateAsset()
     {
         StateObject = new GameOverState();
-        Debug.Log("Hello from GameOverStateAsset()");
+        //Debug.Log("Hello from GameOverStateAsset()");
     }
 
     public GameOverState StateObject { get => stateObject; set => stateObject = value; }

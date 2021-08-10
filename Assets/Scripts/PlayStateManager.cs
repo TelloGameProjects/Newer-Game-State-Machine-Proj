@@ -12,8 +12,8 @@ public class PlayStateManager : MonoBehaviour
     public PlayingStateAsset PlayingStateAsset { get => playingStateAsset; set => playingStateAsset = value; }
 
 
-    // Start is called before the first frame update
-    void Start()
+    
+    void OnEnable()
     {
         stateManager.StateMachine.AppStateMachine.AddState(PlayingStateAsset.StateObject);
         stateManager.StateMachine.AppStateMachine.OnStateChange += CheckChangedState;
@@ -32,6 +32,13 @@ public class PlayStateManager : MonoBehaviour
         if (newState == PlayingStateAsset.StateObject)
         {
             Debug.Log("Hello from PlayInitializer.CheckChangedState()!");
+            ActivateStateObjects();
         }
+    }
+
+    void ActivateStateObjects()
+    {
+        foreach (Transform child in transform)
+            child.gameObject.SetActive(true);
     }
 }
