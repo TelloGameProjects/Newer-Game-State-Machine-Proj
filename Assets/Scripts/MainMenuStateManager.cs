@@ -21,18 +21,6 @@ public class MainMenuStateManager : MonoBehaviour
         Debug.Log("MainMenuState added to AppStateMachine");
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void CheckChangedState(State newState)
     {
 

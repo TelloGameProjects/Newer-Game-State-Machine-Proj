@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Unity​Engine.UIElements;
 
 
@@ -6,22 +7,23 @@ public class UIHandler : MonoBehaviour
 {
     // provide reference in editor inspector (from step 2)
     public UIDocument UIDocument;
-    Button button;
-    Label label;
-    TextField textField;
+    Button menuButton;
+    Action onMenuButtonClick;
+
+    public Action OnButtonClick { get => onMenuButtonClick; set => onMenuButtonClick = value; }
+
     void Start()
     {
         var root = UIDocument.rootVisualElement;
         // get ui elements by name
-        button = root.Q<Button>("start-button");
+        menuButton = root.Q<Button>("start-button");
 
         // add event handler
-        button.clickable.clicked += Button_clicked;
+        menuButton.clickable.clicked += ButtonClicked;
     }
 
-    private void Button_clicked()
+    private void ButtonClicked()
     {
-        Debug.Log("Start Button Clicked");
-        gameObject.SetActive(false);
+        OnButtonClick?.Invoke();
     }
 }
