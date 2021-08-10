@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Vast.StateMachine;
 
-public class MainMenuInitializer : MonoBehaviour
+public class MainMenuStateManager : MonoBehaviour
 {
 
     [SerializeField] private StateManager stateManager;
