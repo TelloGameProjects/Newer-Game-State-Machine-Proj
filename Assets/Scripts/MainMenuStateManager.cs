@@ -8,7 +8,7 @@ using Vast.StateMachine;
 public class MainMenuStateManager : MonoBehaviour
 {
 
-    [SerializeField] private StateManager stateManager;
+    [SerializeField] private GameStateManager stateManager;
 
     [SerializeField] private MainMenuStateAsset menuState;
 

@@ -5,7 +5,7 @@ using Vast.StateMachine;
 
 public class PlayStateManager : MonoBehaviour
 {
-    [SerializeField] private StateManager stateManager;
+    [SerializeField] private GameStateManager stateManager;
 
     [SerializeField] private PlayingStateAsset playingState;
 

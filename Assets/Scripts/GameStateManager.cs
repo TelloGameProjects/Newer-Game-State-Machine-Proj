@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateManager : MonoSingleton<StateManager>
+public class GameStateManager : MonoSingleton<GameStateManager>
 {
     [SerializeField] private AppManager stateMachine;
 
