@@ -9,6 +9,8 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     private StartButton mainMenuStartButton;
 
+    [SerializeField] private GameEvent startButtonClickEvent;
+
     public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
     void Awake()
@@ -24,6 +26,6 @@ public class UIHandler : MonoBehaviour
 
     private void Button_clicked()
     {
-        Debug.Log("UIHandler: Start Button Clicked");
+        startButtonClickEvent.Raise();
     }
 }
