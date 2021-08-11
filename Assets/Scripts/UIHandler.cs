@@ -3,24 +3,22 @@ using UnityEngine.UIElements;
 
 public class UIHandler : MonoBehaviour
 {
-    // provide reference in editor inspector (from step 2)
     public UIDocument UIDocument;
     
-    [SerializeField]
-    private StartButton mainMenuStartButton;
+    private Button mainMenuStartButton;
 
     [SerializeField] private GameEvent startButtonClickEvent;
 
-    public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
+    public Button MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
-    void Awake()
+    void Start()
     {
         var root = UIDocument.rootVisualElement;
         // get ui elements by name
-        MainMenuStartButton.StartButtonControl = root.Q<Button>("start-button");
+        MainMenuStartButton = root.Q<Button>("start-button");
 
         // add event handler for this class
-        MainMenuStartButton.StartButtonControl.clickable.clicked += Button_clicked;
+        MainMenuStartButton.clickable.clicked += Button_clicked;
 
     }
 
