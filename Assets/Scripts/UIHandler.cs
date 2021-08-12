@@ -18,12 +18,18 @@ public class UIHandler : MonoBehaviour
         MainMenuStartButton = root.Q<Button>("start-button");
 
         // add event handler for this class
-        MainMenuStartButton.clickable.clicked += Button_clicked;
+        MainMenuStartButton.clickable.clicked += StartButtonClicked;
+
 
     }
 
-    private void Button_clicked()
+    private void StartButtonClicked()
     {
         startButtonClickEvent.Raise();
+    }
+
+    private void ExitButtonClicked()
+    {
+
     }
 }

@@ -12,11 +12,11 @@ public class MainMenuStateManager : MonoBehaviour
 
     [SerializeField] private MainMenuStateAsset menuState;
 
-    [SerializeField] private StartButton mainMenuStartButton;
+    [SerializeField] private MenuButton mainMenuStartButton;
 
 
     public MainMenuStateAsset MenuState { get => menuState; set => menuState = value; }
-    public StartButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
+    public MenuButton MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
 
     private void OnEnable()
     {
@@ -29,7 +29,7 @@ public class MainMenuStateManager : MonoBehaviour
 
     private void Start()
     {
-        MainMenuStartButton.StartButtonControl.clickable.clicked += ButtonWorks;
+        MainMenuStartButton.ButtonControl.clickable.clicked += ButtonWorks;
     }
 
     void CheckChangedState(State newState)
