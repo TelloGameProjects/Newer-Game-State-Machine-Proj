@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class ExitButtonResponse : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void RespondToExitButton()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Exit button clicked");
     }
 }
