@@ -17,4 +17,9 @@ public static class SceneLoader
     {
         SceneManager.LoadScene(scene.ToString());
     }
+
+    public static void Unload(Scene scene)
+    {
+        SceneManager.UnloadSceneAsync(scene.ToString());
+    }
 }
