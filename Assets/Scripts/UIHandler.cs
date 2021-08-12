@@ -6,19 +6,23 @@ public class UIHandler : MonoBehaviour
     public UIDocument UIDocument;
     
     private Button mainMenuStartButton;
+    private Button mainMenuExitButton;
 
     [SerializeField] private GameEvent startButtonClickEvent;
+    [SerializeField] private GameEvent exitButtonClickEvent;
 
     public Button MainMenuStartButton { get => mainMenuStartButton; set => mainMenuStartButton = value; }
+    public Button MainMenuExitButton { get => mainMenuExitButton; set => mainMenuExitButton = value; }
 
     void Start()
     {
         var root = UIDocument.rootVisualElement;
-        // get ui elements by name
-        MainMenuStartButton = root.Q<Button>("start-button");
 
-        // add event handler for this class
+        MainMenuStartButton = root.Q<Button>("start-button");
         MainMenuStartButton.clickable.clicked += StartButtonClicked;
+
+        MainMenuExitButton = root.Q<Button>("exit-button");
+        MainMenuExitButton.clickable.clicked += ExitButtonClicked;
 
 
     }
@@ -30,6 +34,6 @@ public class UIHandler : MonoBehaviour
 
     private void ExitButtonClicked()
     {
-
+        exitButtonClickEvent.Raise();
     }
 }
