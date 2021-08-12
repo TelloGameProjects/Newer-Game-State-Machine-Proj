@@ -16,11 +16,12 @@ public class MainMenuState : State
     {
         // Load MainMenuScene
         SceneLoader.Load(SceneLoader.Scene.MainMenuScene);
-        // Unload All other scenes
+        
     }
     public override void OnExit() 
     {
-        // unload main menu scene
+        //unload main menu scene
+        SceneLoader.Unload(SceneLoader.Scene.MainMenuScene);
     }
     public override void Update() { }
     public override void FixedUpdate() { }
