@@ -9,6 +9,14 @@ TagManager:
   - PlayingManager
   - PauseManager
   - GameOverManager
+  - Background
+  - Background_Parallax
+  - PlayerCharacter
+  - SurfBoard
+  - Obstacle
+  - Menu
+  - Background_Panel
+  - Camera_Obstacle
   layers:
   - Default
   - TransparentFX
@@ -16,12 +24,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background_Panel
+  - Player
+  - Menu
+  - Background_Parallax
+  - Background
+  - Obstacle
   - 
   - 
   - 
@@ -45,4 +53,31 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG_Panel
+    uniqueID: 2858284163
+    locked: 0
+  - name: MenuUI
+    uniqueID: 1087092461
+    locked: 0
+  - name: BackClouds
+    uniqueID: 891644319
+    locked: 0
+  - name: BackMountain
+    uniqueID: 627246681
+    locked: 0
+  - name: MidCloud
+    uniqueID: 71257057
+    locked: 0
+  - name: ForeMountain
+    uniqueID: 1144963821
+    locked: 0
+  - name: ForeCloud
+    uniqueID: 200521777
+    locked: 0
+  - name: Player
+    uniqueID: 1126167285
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3556319897
     locked: 0
