@@ -5,13 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MainMenuState", menuName = "States/MainMenuState")]
 public class MainMenuStateAsset : ScriptableObject
 {
-    private SplashScreenState stateObject;
+    private MainMenuState stateObject;
 
     MainMenuStateAsset()
     {
-        StateObject = new SplashScreenState();
+        StateObject = new MainMenuState();
         //Debug.Log("Hello from MainMenuStateAsset()");
     }
 
-    public SplashScreenState StateObject { get => stateObject; set => stateObject = value; }
+    public MainMenuState StateObject { get => stateObject; set => stateObject = value; }
 }
