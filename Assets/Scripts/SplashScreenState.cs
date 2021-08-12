@@ -12,8 +12,15 @@ public class SplashScreenState : State
     }
 
     #region Class Methods
-    public override void OnEnter() { }
-    public override void OnExit() { }
+    public override void OnEnter() 
+    {
+        // Load MainMenuScene
+        // Unload All other scenes
+    }
+    public override void OnExit() 
+    {
+        // unload main menu scene
+    }
     public override void Update() { }
     public override void FixedUpdate() { }
     #endregion
