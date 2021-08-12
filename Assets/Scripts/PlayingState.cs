@@ -17,7 +17,10 @@ public class PlayingState : State
         Debug.Log("Hello from PlayingState.OnEnter()");
         SceneLoader.Load(SceneLoader.Scene.PlayingScene);
     }
-    public override void OnExit() { }
+    public override void OnExit() 
+    { 
+
+    }
     public override void Update() { }
     public override void FixedUpdate() { }
     #endregion
