@@ -10,7 +10,7 @@ public class SMTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        appMgr.AppStateMachine.AddState(new SplashScreenState());
+        appMgr.AppStateMachine.AddState(new MainMenuState());
         appMgr.AppStateMachine.AddState(new PlayingState());
         appMgr.AppStateMachine.OnStateChange += PrintDebug;
     }

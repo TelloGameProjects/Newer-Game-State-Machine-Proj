@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class SceneLoader
+public class SceneLoader
 {
     public enum Scene           // Note: Spelling of enum fields matter
     {
@@ -13,7 +13,7 @@ public static class SceneLoader
         GameOverScene
     }
 
-    public static void Load(Scene scene)
+    public void Load(Scene scene)
     {
         SceneManager.LoadScene(scene.ToString());
     }

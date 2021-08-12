@@ -4,11 +4,11 @@ using Vast.StateMachine;
 
 
 [Serializable]
-public class SplashScreenState : State 
+public class MainMenuState : State 
 {
-    public SplashScreenState()
+    public MainMenuState()
     {
-        Name = "SplashScreenState";
+        Name = "MainMenuState";
     }
 
     #region Class Methods

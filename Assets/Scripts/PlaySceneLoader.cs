@@ -18,6 +18,6 @@ public class PlaySceneLoader : MonoBehaviour
 
     public void LoadPlayScene()
     {
-        SceneLoader.Load(SceneLoader.Scene.PlayingScene);
+       // SceneLoadManager.Load(SceneLoadManager.Scene.PlayingScene);
     }
 }
