@@ -1,13 +1,13 @@
 .unity-button {
     width: 10%;
     height: 10%;
-    background-color: rgba(113, 36, 168, 255);
+    background-color: rgb(113, 36, 168);
     font-size: 29px;
     -unity-font-style: bold;
     -unity-font: resource('Fonts & Materials/LiberationSans');
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .logo-label {
-    color: rgba(184, 109, 255, 255);
+    color: rgb(184, 109, 255);
 }
