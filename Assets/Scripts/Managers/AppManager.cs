@@ -13,4 +13,6 @@ public class AppManager : ScriptableObject
     {
         appStateMachine = new StateMachine();
     }
+
+
 }
